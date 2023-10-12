@@ -1,0 +1,14 @@
+.admin{
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  &__title{
+  }
+  .btn{
+    margin-bottom: 1rem;
+  }
+  h1{
+    margin: 0 auto 2rem;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,42 @@
+<nav role="navigation">
+    <div id="menuToggle">
+
+        <input type="checkbox"/>
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+            <a href="{{ path('app_home') }}">
+                <li>Accueil</li>
+            </a>
+            {% if app.user and 'ROLE_ADMIN' not in app.user.roles %}
+            <a href="{{ path('dashboard', {'id': app.user.id}) }}">
+                <li>Dashboard</li>
+            </a>
+            <a href="{{ path('app_logout') }}">
+                <li>Déconnexion</li>
+            </a>
+            {% elseif app.user and 'ROLE_ADMIN' in app.user.roles %}
+            <a href="{{ path('app_admin') }}">
+                <li>Dashboard</li>
+            </a>
+            <a href="{{ path('app_logout') }}">
+                <li>Déconnexion</li>
+            </a>
+            {% else %}
+            <a href="{{ path('app_login') }}">
+                <li>Se connecter</li>
+            </a>
+            <a href="{{ path('app_register') }}">
+                <li>S'inscrire</li>
+            </a>
+            <a href="{{ path('cart_index')}}"><li>Panier</li></a>
+            {% endif %}
+        </ul>
+    </div>
+    <a class="navbar__title" href="{{ path('app_home') }}">
+        <h1>2Schuss Pizza</h1>
+    </a>
+</nav>

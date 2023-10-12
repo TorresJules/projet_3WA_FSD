@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="inner admin">
+    <h1 class="admin__title">Dashboard Admin</h1>
+    <a class="btn btn-secondary" href="{{ path('app_user_index')}}">Utilisateurs</a>
+    <a class="btn btn-secondary" href="{{ path('app_item_index')}}">Produits</a>
+    <a class="btn btn-secondary" href="{{ path('app_category_index')}}">Catégories</a>
+    <a class="btn btn-secondary" href="{{ path('app_size_index')}}">Tailles</a>
+    <a class="btn btn-secondary" href="{{ path('app_ingredient_index')}}">Ingrédients</a>
+
+</div>
+{% endblock %}

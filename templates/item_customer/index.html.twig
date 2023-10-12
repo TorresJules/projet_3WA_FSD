@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ItemCustomerController!{% endblock %}
+
+{% block body %}
+    <div class="inner bo">
+        <h1>{{ item.name }}</h1>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="home inner">
+        <div class="home__items">
+            {% for item in items %}
+                <div class="home__items__item item">
+                    <a class="item__link" href="{{ path('app_item_customer', {'id': item.id})}}">
+                        <img class="item__image" src="{{ asset('uploads/images/' ~ item.imageFilename) }}" alt="{{ item.name }}"/>
+                        <div class="item__text">
+                            <h3 class="item__text__title">{{ item.name }}</h3>
+                            <p class="item__text__price">{{ item.price }}€</p>
+                        </div>
+                    </a>
+                    <a class="item__add btn btn-secondary" href="{{ path('cart_add', {'id': item.id})}}">Ajouter au panier</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

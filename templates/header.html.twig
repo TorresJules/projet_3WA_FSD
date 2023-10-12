@@ -1,0 +1,49 @@
+<header>
+    {{ include('/mobile/burger.html.twig')}}
+    <div class="header">
+        <ul class="navbar inner">
+            <a class="navbar__title" href="{{ path('app_home') }}">
+                <h1>2Schuss Pizza</h1>
+            </a>
+            {% if app.user and 'ROLE_ADMIN' not in app.user.roles %}
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary" href="{{ path('dashboard', {'id': app.user.id}) }}">
+                        {{ include('/svg/user.svg.twig')  }}
+                        Dashboard</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary" href="{{ path('app_logout') }}">
+                        {{ include('/svg/logout.svg.twig')  }}
+                        Déconnexion</a>
+                </li>
+            {% elseif app.user and 'ROLE_ADMIN' in app.user.roles %}
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary" href="{{ path('app_admin') }}">
+                        {{ include('/svg/user.svg.twig')  }}
+                        Dashboard</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary" href="{{ path('app_logout') }}">
+                        {{ include('/svg/logout.svg.twig')  }}
+                        Déconnexion</a>
+                </li>
+            {% else %}
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary" href="{{ path('app_login')}}">
+                        {{ include('/svg/user.svg.twig')  }}
+                        Se connecter</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__item__link btn btn-secondary"  href="{{ path('app_register') }}">
+                        {{ include('/svg/register.svg.twig')  }}
+                        S'inscrire</a>
+                </li>
+            {% endif %}
+            <li class="navbar__item">
+                <a class="navbar__item__link btn btn-secondary" href="{{ path('cart_index')}}">
+                    {{ include('/svg/cart.svg.twig')  }}
+                    Panier</a>
+            </li>
+        </ul>
+    </div>
+</header>

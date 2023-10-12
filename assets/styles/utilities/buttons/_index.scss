@@ -1,0 +1,28 @@
+@use "../../variables" as *;
+.btn{
+  font-family: 'Uber';
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  width: fit-content;
+  border-radius: 100px;
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    background-color: black;
+    transition: .3s;
+  }
+}
+.btn-primary{
+  background-color: $primary;
+  &:hover{
+    color: $primary;
+  }
+}
+.btn-secondary{
+  background-color: $secondary;
+  &:hover{
+    color: $secondary;
+  }
+}

@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+//------- Media Query Ranges
+//------- Usage : @media #{$small-and-down} {...}
+//---------------------------------------------------------------------------
+
+$extra-small-screen: 489.98px !default;
+$extra-small-screen-up: 490px !default;
+
+$small-screen: 767.98px !default;
+$small-screen-up: 768px !default;
+
+$medium-screen: 991.98px !default;
+$medium-screen-up: 992px !default;
+
+$large-screen: 1279.98px !default;
+$large-screen-up: 1280px !default;
+
+$extra-large-screen: 1319.98px !default;
+$extra-large-screen-up: 1320px !default;
+
+$extra-small-and-down: "only screen and (max-width : #{$extra-small-screen})" !default;
+$small-and-up: "only screen and (min-width : #{$extra-small-screen-up})" !default;
+
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+
+$between-large-and-extra-large: "only screen and (min-width : #{$large-screen-up}) and (max-width: #{$extra-large-screen})" !default;
+$between-small-and-medium: "only screen and (min-width : #{$small-screen-up}) and (max-width: #{$medium-screen})" !default;
+$large-and-down: "only screen and (max-width : #{$large-screen})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+
+$extra-large-and-down: "only screen and (max-width : #{$extra-large-screen})" !default;
+$full-width-and-up: "only screen and (min-width : #{$extra-large-screen-up})" !default;

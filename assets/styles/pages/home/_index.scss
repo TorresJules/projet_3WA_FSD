@@ -1,0 +1,49 @@
+@use "../../variables" as *;
+.home{
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  &__items{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    @media screen and (min-width: 800px){
+      gap: 2rem;
+    }
+      .item{
+      background-color: $secondary;
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      overflow: hidden;
+      @media #{$medium-and-up}{
+        width: 30%;
+      }
+      &__link{
+        height: 100%;
+        text-decoration: none;
+      }
+      &__image{
+        max-width: 100%;
+      }
+      &__text{
+        padding: 0 10px;
+        color: black;
+        &__title{
+          margin-top: 0;
+          margin-bottom: .5rem;
+        }
+        &__price{
+          margin: 0;
+        }
+      }
+      &__add{
+        text-decoration: none;
+        margin: 1rem;
+      }
+    }
+  }
+}

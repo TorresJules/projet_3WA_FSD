@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+
+<div class="form__section">
+    {{ form_row(form.name, { 'label_attr': {'class': 'form__section'} }) }}
+</div>
+
+<div class="form__section">
+    {{ form_row(form.price, { 'label_attr': {'class': 'form__section'} }) }}
+</div>
+
+<div class="form__section">
+    {{ form_row(form.ingredient, { 'label_attr': {'class': 'form__section'} }) }}
+</div>
+
+<div class="form__section">
+    {{ form_row(form.category, { 'label_attr': {'class': 'form__section'} }) }}
+</div>
+
+<div class="form__section">
+    {{ form_row(form.image, { 'label_attr': {'class': 'form__section'} }) }}
+</div>
+
+{% if item.imageFilename is defined and item.imageFilename is not empty %}
+    <div class="form-group">
+        <label>Image actuelle:</label>
+        <img class="show-image" src="{{ asset('uploads/images/' ~ item.imageFilename) }}" alt="Image actuelle">
+    </div>
+{% endif %}
+
+<button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

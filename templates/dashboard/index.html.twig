@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+<div class="inner admin bo">
+    <h1>Bienvenue {{ user.pseudo }}!</h1>
+    {% if addresses|length > 0 %}
+        <div style="border:solid 1px black;padding:2rem">
+
+        <h2>Votre adresse: </h2>
+        {% for address in addresses %}
+                <p>{{ address.street }}, {{ address.city }}, {{ address.zipcode}}</p>
+                <a href="{{ path('app_address_edit', {'id': address.id}) }}">Modifier l'addresse</a>
+        {% endfor %}
+        </div>
+    {% else %}
+        <a href="{{ path('app_address_new')}}">Ajouter une adresse</a>
+    {% endif %}
+    {% if phone is not null %}
+        <div style="border:solid 1px black;padding:2rem">
+            <h2>Votre numéro de téléphone:</h2>
+            <p>{{ phone }}</p>
+            <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier le numéro</a>
+        </div>
+
+    {% endif %}
+</div>
+{% endblock %}

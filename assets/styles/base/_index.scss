@@ -1,0 +1,52 @@
+@use "../variables" as *;
+@font-face {
+  font-family: 'Uber';
+  font-weight: normal;
+  src: url(../../fonts/UberMoveMedium.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Uber';
+  font-weight: bold;
+  src: url(../../fonts/UberMoveBold.otf) format('opentype');
+}
+body{
+  margin: 0;
+  font-size: $text-md;
+  background-color: $primary;
+  font-family: 'Uber', sans-serif;
+}
+.inner{
+  max-width: min(80vw, 70rem);
+  margin: 0 auto;
+}
+
+h1{
+  font-size: $text-3xl;
+}
+h2{
+  font-size: $text-xl;
+}
+h3{
+  font-size: $text-lg;
+}
+p, ul, a, button {
+  font-size: $text-md;
+}
+.bo{
+  margin-top: 6rem;
+}
+table{
+  margin: 0 auto;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px 15px;
+  @media #{$extra-small-and-down} {
+    padding: 10px 5px;
+  }
+}
+.show-image{
+  width: 50%;
+}

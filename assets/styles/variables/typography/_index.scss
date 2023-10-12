@@ -1,0 +1,8 @@
+$text-xs: clamp(0.6075rem, 0.585rem + 0.1125vw, 0.72rem);
+$text-sm: clamp(0.7294rem, 0.6953rem + 0.1706vw, 0.9rem);
+$text-md: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
+$text-lg: clamp(1.05rem, 0.9788rem + 0.3563vw, 1.4063rem);
+$text-xl: clamp(1.26rem, 1.1604rem + 0.4981vw, 1.7581rem);
+$text-2xl: clamp(1.5119rem, 1.3748rem + 0.6856vw, 2.1975rem);
+$text-3xl: clamp(1.8144rem, 1.6279rem + 0.9325vw, 2.7469rem);
+$text-4xl: clamp(2.1775rem, 1.9264rem + 1.2556vw, 3.4331rem);
