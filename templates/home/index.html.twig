@@ -4,9 +4,11 @@
 
 {% block body %}
     <div class="home inner">
+        <input type="text" id="search" placeholder="Rechercher une pizza">
+
         <div class="home__items">
             {% for item in items %}
-                <div class="home__items__item item">
+                <div class="home__items__item item" data-item-name="{{ item.name|lower }}">
                     <a class="item__link" href="{{ path('app_item_customer', {'id': item.id})}}">
                         <img class="item__image" src="{{ asset('uploads/images/' ~ item.imageFilename) }}" alt="{{ item.name }}"/>
                         <div class="item__text">

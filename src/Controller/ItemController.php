@@ -36,6 +36,7 @@ class ItemController extends AbstractController
     {
         // Crée un nouvel article en utilisant un formulaire et le persiste en base de données s'il est soumis et valide
         $item = new Item();
+        // nouvelle instance de form (class ItemType)
         $form = $this->createForm(ItemType::class, $item);
         $form->handleRequest($request);
 

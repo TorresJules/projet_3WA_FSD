@@ -2,6 +2,11 @@
 .home{
   margin-top: 8rem;
   margin-bottom: 8rem;
+  #search{
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+  }
   &__items{
     width: 100%;
     display: flex;
